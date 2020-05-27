@@ -6,7 +6,7 @@ Script de instalação para Raspberry Pi.
 Para começar, é necessário alterar as permissões dos scripts para que seja possível executá-los. Para isso, navegue com o seu terminal até o repositório onde você salvou os scripts e execute o comando a seguir:
 
 ```console
-chmod u+x script\_1 script\_2 script\_theia
+chmod u+x script_1 script_2 script_theia
 ```
 
 
