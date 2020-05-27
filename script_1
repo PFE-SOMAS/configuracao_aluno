@@ -1,0 +1,28 @@
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get upgrade --y
+# GIT
+sudo apt install git
+git --version
+# Python
+sudo apt-get install python -y
+sudo apt-get install python3 -y
+python2 --version
+python3 --version
+# Chromium
+sudo apt-get install chromium-browser --yes
+chromium-browser --product-version
+# Theia
+## NodeJS v8
+wget https://nodejs.org/dist/v12.16.3/node-v12.16.3-linux-armv7l.tar.xz
+tar xf node-v12.16.3-linux-armv7l.tar.xz
+cd node-v12.16.3-linux-armv7l
+sudo cp -R * /usr/local/
+node -v
+npm -v
+cd ..
+## Yarn
+curl -o- -L https://yarnpkg.com/install.sh | bash
+source ~/.bashrc
+
