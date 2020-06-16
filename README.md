@@ -53,7 +53,7 @@ Aguarde o término do script, e quando isto acontecer todos os softwares já est
 
 Para que a pasta "SOMAS", que foi criada pelo script, possa ser montada com a pasta "SOMAS" do notebook do professor, e assim permitir o compartilhamento de arquivos sem a necessidade de internet, é necessário que esta pasta seja montada via SSHFS na pasta remota sempre que a Raspberry Pi iniciar.
 
-Essa montagem apenas poderá acontecer se o notebook do professor e a Raspberry Pi estiverem conectados na mesma rede Wi-fi. Assim, foi utilizado um script disponibilizado em um fórum da internet (Fonte: https://askubuntu.com/questions/3299/how-to-run-cron-job-when-network-is-up ), que se encontra no arquivo "script_compartilhamento.sh" deste repositório GIT, que realiza um ping na rede para saber se a Raspberry Pi já está conectada ao Wi-fi. Caso ela não esteja, o ping é realizado outras vezes para verificar a conexão novamente. Essa checagem acontecerá no máximo 5 vezes. Caso o ping retorne indicando que a Raspberry Pi nunca se conectou, a montagem não acontecerá. Caso o ping retorne indicando que a Raspberry Pi está conectada ao Wi-fi, a montagem da pasta local com a pasta remota será realizada.
+Essa montagem apenas poderá acontecer se o notebook do professor e a Raspberry Pi estiverem conectados na mesma rede Wi-fi. Assim, foi utilizado um script disponibilizado em um fórum da internet [(Referência)](https://askubuntu.com/questions/3299/how-to-run-cron-job-when-network-is-up), que se encontra no arquivo "script_compartilhamento.sh" deste repositório GIT, que realiza um ping na rede para saber se a Raspberry Pi já está conectada ao Wi-fi. Caso ela não esteja, o ping é realizado outras vezes para verificar a conexão novamente. Essa checagem acontecerá no máximo 5 vezes. Caso o ping retorne indicando que a Raspberry Pi nunca se conectou, a montagem não acontecerá. Caso o ping retorne indicando que a Raspberry Pi está conectada ao Wi-fi, a montagem da pasta local com a pasta remota será realizada.
 
 E para que este script seja executado sempre que a Raspberry Pi seja iniciada, foi adicionada uma linha ao Crontab da conta do aluno, indicando que esse script deve ser sempre executado 40 segundos depois que a Raspberry Pi iniciar (para dar tempo de logar na conta do aluno).
 
@@ -69,7 +69,8 @@ e adicionar a linha a seguir no final do arquivo (verifique se o script realment
 @reboot sleep 40 && /home/aluno/script_compartilhamento.sh &
 ```
 
-O arquivo deve ficar desta forma:
+O arquivo deve ficar como a imagem a seguir.
+
 ![Crontab](Imagens/crontab.png "Editando o Crontab")
 
 
