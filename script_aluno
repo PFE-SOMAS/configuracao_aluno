@@ -1,0 +1,39 @@
+#!/bin/bash
+#Script de Instalacao da Raspberry Pi do kit aluno. Para funcionar, o usuário precisa se chamar "aluno" e o Sistema Operacional precisa estar em português, por causa do nome das pastas.
+
+#Editar o IP do professor na linha abaixo:
+IP_Professor=192.168.15.4
+
+cd ~/
+sudo apt-get update
+sudo apt-get upgrade --y
+
+# GIT
+sudo apt install git
+git --version
+
+# Python
+python --version
+python3 --version
+
+# Chromium
+sudo apt-get install chromium-browser --yes
+chromium-browser --product-version
+
+# SSHFS
+mkdir SOMAS
+sudo apt-get install sshfs -y
+cat /etc/group | grep 'fuse'
+sudo groupadd fuse
+sudo usermod -a -G fuse aluno
+sshfs professor@$IP_Professor:/home/professor/SOMAS SOMAS
+
+# Wallpaper e atalhos
+cd Imagens/
+curl -O https://i.ibb.co/51JC6BQ/wallpaper.png
+curl https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1024px-Visual_Studio_Code_1.35_icon.svg.png > ~/Imagens/VSCode.png
+curl https://i.ya-webdesign.com/images/google-photos-icon-png-3.png > ~/Imagens/google.png
+curl https://lh3.googleusercontent.com/i-ij7KM2pFUUpFE31QAUDXg5mzGFNbm16S4tjmg2ZyuhCGLgNJ8oXJRbq7ysh6LoZg > ~/Imagens/w3schools.png
+sudo chmod 777 VSCode.png google.png wallpaper.png w3schools.png
+pcmanfm --set-wallpaper /home/aluno/Imagens/wallpaper.png
+cd ~/
