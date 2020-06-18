@@ -11,6 +11,9 @@ MAX_CHECKS=5
 # Initial starting value for checks
 CHECKS=0
 
+#Editar esta linha!
+IP_Professor=192.168.15.4
+
 # Loop while we're not online.
 while [ $IS_ONLINE -eq 0 ]; do
     # We're offline. Sleep for a bit, then check again
@@ -30,4 +33,4 @@ if [ $IS_ONLINE -eq 0 ]; then
 fi
 
 # Now we enter our normal code here. The above was just for online checking
-sshfs professor@192.168.15.4:/home/professor/SOMAS SOMAS
+sshfs professor@$IP_Professor:/home/professor/SOMAS SOMAS
