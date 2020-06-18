@@ -31,7 +31,9 @@ Insira a senha do notebook do professor caso ela seja solicitada.
 
 ### Utilizando o script de instalação
 
-Para que os programas sejam instalados e o sistema operacional seja configurado, foi criado um script de instalação. Copie ou baixe o script _"script_aluno"_ na Raspberry Pi do kit aluno e, antes de utilizá-lo, edite-o com o editor de texto de sua preferência: Troque a variável "IP_Professor" que está na 5ª linha do arquivo para o IP da máquina do professor.
+Para que os programas sejam instalados e o sistema operacional seja configurado, foi criado um script de instalação. Copie ou baixe o script _"script_aluno"_ na Raspberry Pi do kit aluno e, antes de utilizá-lo, edite-o com o editor de texto de sua preferência: Troque o valor da variável "IP_Professor" que está na 5ª linha do arquivo para o IP da máquina do professor.
+
+Edite também o arquivo _"script_compartilhamento.sh"_, alterando o valor da variável "IP_Professor" que está na 15ª linha do arquivo para o IP da máquina do professor.
 
 É necessário também alterar a permissão deste script, para que ele possa ser executado. Para isso, navegue com o terminal até a pasta onde o script se encontra e execute o comando a seguir.
 
