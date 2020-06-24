@@ -1,7 +1,11 @@
 #!/bin/bash
+
+#Editar esta linha!
+IP_Professor=192.168.15.4
+
 function check_online
 {
-    netcat -z -w 5 8.8.8.8 53 && echo 1 || echo 0
+    netcat -z -w 5 $IP_Professor 53 && echo 1 || echo 0
 }
 
 # Initial check to see if we are online
@@ -10,9 +14,6 @@ IS_ONLINE=check_online
 MAX_CHECKS=5
 # Initial starting value for checks
 CHECKS=0
-
-#Editar esta linha!
-IP_Professor=192.168.15.4
 
 # Loop while we're not online.
 while [ $IS_ONLINE -eq 0 ]; do
