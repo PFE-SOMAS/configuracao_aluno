@@ -40,6 +40,13 @@ Edite também o arquivo _"script_compartilhamento.sh"_, alterando o valor da var
 ```console
 chmod u+x script_aluno
 ```
+Antes de executá-lo, certifique-se que o usuário "aluno" tem permissões root, rodando os comandos a seguir:
+
+```console
+sudo su - root
+sudo usermod -aG sudo aluno
+```
+
 
 Pronto, para executá-lo, rode o comando a seguir no mesmo terminal.
 
@@ -68,10 +75,10 @@ crontab -e
 e adicionar a linha a seguir no final do arquivo (verifique se o script realmente está na pasta indicada).
 
 ```console
-@reboot sleep 40 && /home/aluno/script_compartilhamento.sh &
+@reboot sleep 40 && /home/aluno/configuracao_aluno/script_compartilhamento.sh &
 ```
 
-O arquivo deve ficar como a imagem a seguir.
+O arquivo deve ficar como a imagem a seguir, porém com o caminho "/home/aluno/configuracao_aluno/script_compartilhamento.sh".
 
 ![Crontab](Imagens/crontab.png "Editando o Crontab")
 
