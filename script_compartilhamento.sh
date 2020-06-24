@@ -34,4 +34,4 @@ if [ $IS_ONLINE -eq 0 ]; then
 fi
 
 # Now we enter our normal code here. The above was just for online checking
-sshfs professor@$IP_Professor:/home/professor/SOMAS SOMAS
+sshfs professor@$IP_Professor:/home/professor/SOMAS /home/aluno/SOMAS
